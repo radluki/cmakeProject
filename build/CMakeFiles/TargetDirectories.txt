@@ -1,3 +1,0 @@
-/home/lukasz/cmakeProject/build/CMakeFiles/rebuild_cache.dir
-/home/lukasz/cmakeProject/build/CMakeFiles/firstApp.dir
-/home/lukasz/cmakeProject/build/CMakeFiles/edit_cache.dir
