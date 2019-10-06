@@ -1,26 +1,25 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(cmakeProject)
- 
-#Bring the headers, such as Student.h into the project
-include_directories(include)
-include_directories(include/utils)
 
-include_directories(${GTEST_INCLUDE_DIR})
+file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} src/*)
+include(cmake/functions.cmake)
+
+message(STATUS "Main project sources")
+print_list("${SOURCES}")
+
+include_directories(inc)
 include_directories(logger)
-#Can manually add the sources using the set command as follows:
-#set(SOURCES src/mainapp.cpp src/Student.cpp)
- 
-#However, the file(GLOB...) allows for wildcard additions:
-file(GLOB SOURCES "source/*.cpp" "include/*.h" "source/utils/*cpp")
+include_directories(utils/inc)
  
 add_executable(firstApp ${SOURCES})
 
-file(GLOB LOGGER_SOURCES "logger/*.cpp" "logger/*.h")
-add_executable(logger_example ${LOGGER_SOURCES})
-
-enable_testing()
-find_package(GTest REQUIRED)
-add_executable(loggerGTest logger/test/test.cpp)
-target_link_libraries(loggerGTest gtest gtest_main pthread)
-add_custom_target(dummy DEPENDS loggerGTest COMMAND ./loggerGTest --gtest_filter="*LOG_BASE*")
-
+option(OWN_UTILS "Use own libutils.a or external" ON)
+if(OWN_UTILS)
+	message(STATUS "Linking to own library")
+	add_subdirectory(utils)
+	target_link_libraries(firstApp utils)
+else()
+	message(STATUS "Linking to exteranlly built library")
+	target_link_libraries(firstApp ~/cmakeProject/utils/build/libutils.a)
+endif()
+add_subdirectory(logger)

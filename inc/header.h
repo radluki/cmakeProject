@@ -2,6 +2,6 @@
 
 using namespace std;
 
-int globalInt{55};
+int globalInt{54};
 std::string helloWorld{"Hello world"};
 

@@ -1,4 +1,4 @@
-#include "utils/math.h"
+#include "math.h"
 
 namespace utils
 {
