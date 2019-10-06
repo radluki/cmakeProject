@@ -1,0 +1,7 @@
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/rebuild_cache.dir
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/logger_example.dir
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/firstApp.dir
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/loggerGTest.dir
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/dummy.dir
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/test.dir
+/home/lukasz/cmakeProject/buildNinja/CMakeFiles/edit_cache.dir
