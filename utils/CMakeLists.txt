@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(utils)
 
-file(GLOB INCLUDES inc/*)
 file(GLOB SOURCES src/*)
 include_directories(../logger) 
 include_directories(inc)
-add_library(utils ${SOURCES} ${INCLUDES})
+add_library(utils ${SOURCES})
+target_include_directories(utils INTERFACE inc)
 
