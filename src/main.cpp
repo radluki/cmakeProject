@@ -5,8 +5,8 @@
 
 int main()
 {
-	LOG << helloWorld;
-	LOG << utils::add(globalInt, 100);
-	libTool();
-	return 0;
+    LOG << helloWorld;
+    LOG << utils::add(globalInt, 100);
+    libTool();
+    return 0;
 }

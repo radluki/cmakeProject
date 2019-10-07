@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 2.8.9)
 project(logger)
 
-include(../cmake/functions.cmake)
-
-file(GLOB SOURCES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "src/*.cpp")
-message(STATUS "Logger sources:")
-print_list("${SOURCES}")
+file(GLOB SOURCES "src/*.cpp")
 add_executable(logger_example ${SOURCES})
 target_include_directories(logger_example PRIVATE inc)
 
