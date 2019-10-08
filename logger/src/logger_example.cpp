@@ -3,5 +3,5 @@
 
 int main()
 {
-	LOG << "Hello World";
+    LOG << "Hello World - it is logger";
 }
