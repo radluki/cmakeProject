@@ -32,4 +32,13 @@ endif()
 add_subdirectory(logger)
 target_link_libraries(firstApp logger)
 
-add_custom_target(run_all DEPENDS firstApp loggerGTest logger_example COMMAND ./firstApp && ./logger/loggerGTest && ./logger/logger_example)
+add_custom_target(run_all
+    DEPENDS
+        firstApp
+        loggerGTest
+        logger_example
+    COMMAND
+        ./firstApp &&
+        ./logger/loggerGTest --gtest_color=yes &&
+        ./logger/logger_example
+)

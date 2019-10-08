@@ -13,4 +13,4 @@ find_package(GTest REQUIRED)
 add_executable(loggerGTest test/test.cpp)
 target_link_libraries(loggerGTest gtest gtest_main pthread logger)
 
-add_custom_target(run DEPENDS loggerGTest logger_example COMMAND ./loggerGTest && ./logger_example)
+add_custom_target(run DEPENDS loggerGTest logger_example COMMAND ./loggerGTest --gtest_color=yes && ./logger_example)
