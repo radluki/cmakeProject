@@ -42,3 +42,5 @@ add_custom_target(run_all
         ./logger/loggerGTest --gtest_color=yes &&
         ./logger/logger_example
 )
+
+add_subdirectory(boostOptionsTests)
