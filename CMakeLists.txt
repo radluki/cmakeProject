@@ -44,3 +44,4 @@ add_custom_target(run_all
 )
 
 add_subdirectory(boostOptionsTests)
+add_subdirectory(examples)
