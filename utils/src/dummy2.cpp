@@ -2,5 +2,5 @@
 
 void dummyFunction()
 {
-    LOG << "Dummyi!!!!!!!!!!!";
+    LOG << "Dummy!!!!!!!!!!!";
 }
