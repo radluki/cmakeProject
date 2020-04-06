@@ -15,7 +15,7 @@ using namespace testutils;
 using namespace testing;
 
 
-class NonOwningPtrTest : public Test 
+class NonOwningPtrTest : public Test
 {
 public:
     NonOwningPtr<Dummy> ptr = make_non_owning<Dummy>(4);
@@ -42,6 +42,6 @@ TEST_F(NonOwningPtrTest, ownershipReleaseObjectDestruction)
     auto ptrNew = ptr.unique_ptr();
     ptrNew.reset();
     EXPECT_THROW(*ptr, NullPtr);
-    EXPECT_THROW(ptr->i, NullPtr);
+    EXPECT_THROW((void)ptr->i, NullPtr);
     EXPECT_FALSE(ptr);
 }
