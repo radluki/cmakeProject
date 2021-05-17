@@ -15,6 +15,36 @@ using namespace ::testing;
 
 namespace po = boost::program_options;
 
+class X
+{
+public:
+  int get5()
+  {
+    return 5;
+  }
+
+  int getField()
+  {
+    return i;
+  }
+private:
+  int i{5};
+};
+
+TEST(MyTest, test_get5)
+{
+  std::shared_ptr<X> x;
+  ASSERT_NE(x, nullptr);
+  EXPECT_EQ(5, x->get5());
+}
+
+TEST(MyTest, test_getField)
+{
+  std::shared_ptr<X> x;
+  ASSERT_NE(x, nullptr);
+  EXPECT_EQ(5, x->getField());
+}
+
 TEST(RangesTest, test_ranges)
 {
   std::vector<int> v(5);
