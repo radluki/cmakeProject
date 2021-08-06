@@ -34,15 +34,15 @@ private:
 TEST(MyTest, test_get5)
 {
   std::shared_ptr<X> x;
-  ASSERT_NE(x, nullptr);
+  ASSERT_EQ(x, nullptr);
   EXPECT_EQ(5, x->get5());
 }
 
 TEST(MyTest, test_getField)
 {
   std::shared_ptr<X> x;
-  ASSERT_NE(x, nullptr);
-  EXPECT_EQ(5, x->getField());
+  ASSERT_EQ(x, nullptr);
+  ASSERT_EXIT((x->getField(),exit(0)),::testing::KilledBySignal(SIGSEGV),".*");
 }
 
 TEST(RangesTest, test_ranges)
