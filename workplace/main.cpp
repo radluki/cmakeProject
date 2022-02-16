@@ -1,60 +1,35 @@
-#include <algorithm>
 #include "logger.h"
+#include <algorithm>
 
 #include <iostream>
 #include <string>
 
-class Field
-{
-public:
-    Field()
-    {
-        LOG << "Field ctr";
-    }
+class Field {
+  public:
+    Field() { LOG << "Field ctr"; }
 
-    ~Field()
-    {
-        LOG << "Field dtr";
-    }
+    ~Field() { LOG << "Field dtr"; }
 };
 
-class Parent
-{
-public:
-    Parent()
-    {
-        LOG << "Parent ctr";
-    }
+class Parent {
+  public:
+    Parent() { LOG << "Parent ctr"; }
 
-    ~Parent()
-    {
-        LOG << "Parent dtr";
-    }
+    ~Parent() { LOG << "Parent dtr"; }
 };
 
-class Thrower : public Parent
-{
+class Thrower : public Parent {
     Field f;
 
-public:
-    Thrower()
-    {
+  public:
+    Thrower() {
         LOG << "Thrower ctr - throwing exception";
         throw std::runtime_error("thrown by Thrower");
     }
 
-    ~Thrower()
-    {
-        LOG << "Thrower Destructor";
-    }
+    ~Thrower() { LOG << "Thrower Destructor"; }
 };
 
-int main()
-try
-{
-    Thrower t;
-}
-catch (const std::exception &e)
-{
+int main() try { Thrower t; } catch (const std::exception& e) {
     LOG << "Caught exception: " << e.what();
 }
