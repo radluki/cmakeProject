@@ -10,12 +10,15 @@ add_executable(workplace
 	main.cpp
 )
 target_link_libraries(workplace
-	gtest
-	gtest_main
-	pthread
 	logger
 	Boost::program_options
 	Boost::filesystem
 	Boost::regex
 )
 
+target_link_libraries(workplace_test
+	logger
+	gtest
+	gtest_main
+	pthread
+)
